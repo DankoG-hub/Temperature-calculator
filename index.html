@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Temperature converter</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>TEMPERATURE CONVERTER</h2>
+      <label for="Celsius">Enter Temperature in Celsius</label>
+      <input type="text" id="celsius" />
+      <button onclick="convToFar()">CONVERT</button>
+      <h5>RESULT:</h5>
+      <p id="result">0</p>
+      <button onclick="refreshBtn()">REFRESH</button>
+    </div>
+
+    <script>
+      function convToFar() {
+        var cels = document.getElementById("celsius").value;
+        var farh = (cels * 9) / 5 + 32;
+
+        document.getElementById("result").innerHTML =
+          cels + " C is equal to: " + farh.toFixed(2) + " F";
+      }
+
+      function refreshBtn() {
+        document.getElementById("result").innerHTML = 0;
+      }
+    </script>
+  </body>
+</html>
